@@ -1,7 +1,5 @@
-package com.aplicada2.registrocompose.feacture_persona.data.local.dao
+package com.aplicada2.registrocompose.feacture_persona.data.source.local.dao
 
-import android.app.Person
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.aplicada2.registrocompose.feacture_persona.domain.model.Persona
 import  kotlinx.coroutines.flow.Flow

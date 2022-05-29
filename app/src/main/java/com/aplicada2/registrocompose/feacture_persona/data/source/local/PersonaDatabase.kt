@@ -1,8 +1,8 @@
-package com.aplicada2.registrocompose.feacture_persona.data.local
+package com.aplicada2.registrocompose.feacture_persona.data.source.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.aplicada2.registrocompose.feacture_persona.data.local.dao.PersonaDao
+import com.aplicada2.registrocompose.feacture_persona.data.source.local.dao.PersonaDao
 import com.aplicada2.registrocompose.feacture_persona.domain.model.Persona
 
 @Database(
