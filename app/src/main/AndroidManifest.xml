@@ -15,7 +15,7 @@
         android:theme="@style/Theme.RegistroCompose"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".feacture_persona.presentation.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.RegistroCompose">

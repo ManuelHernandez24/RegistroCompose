@@ -1,4 +1,4 @@
-package com.aplicada2.registrocompose
+package com.aplicada2.registrocompose.feacture_persona.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
