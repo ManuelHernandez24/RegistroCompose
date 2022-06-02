@@ -72,7 +72,7 @@ fun HomeFab(
     {
     Icon(
         imageVector = Icons.Outlined.Add,
-        contentDescription = null)
+        contentDescription = stringResource(id = R.string.add_persona))
     }
 
 }

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Registro Compose</string>
     <string name="personas">Personas</string>
+    <string name="add_persona">Agregar persona</string>
 </resources>
