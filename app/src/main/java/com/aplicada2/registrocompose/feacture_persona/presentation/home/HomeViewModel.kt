@@ -29,7 +29,7 @@ class HomeViewModel @Inject constructor(
         }.launchIn(viewModelScope)
     }
 
-    fun onEven(event: HomeEvent){
+    fun onEvent(event: HomeEvent){
         when (event){
             is HomeEvent.DeletePersona -> {
                 viewModelScope.launch {
