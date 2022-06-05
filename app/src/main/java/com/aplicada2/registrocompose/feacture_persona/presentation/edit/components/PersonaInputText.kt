@@ -3,10 +3,16 @@ package com.aplicada2.registrocompose.feacture_persona.presentation.edit.compone
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun PersonaInputText(
@@ -22,7 +28,26 @@ fun PersonaInputText(
     ){
         Text(
             text = hint,
-            modifier =
+            modifier = Modifier.baselineHeight(28.dp),
+            style = TextStyle(
+                fontWeight = FontWeight.Bold,
+                fontSize = 12.sp,
+                lineHeight = 16.sp,
+                letterSpacing = 0.4.sp
+            ),
+            color = Color(0xFF45464F)
         )
+        BasicTextField(
+            value = text,
+            onValueChange = onTextChange,
+            modifier = Modifier.baselineHeight(28.dp),
+            textStyle = TextStyle(
+                fontWeight = FontWeight.Normal,
+                fontSize = 16.sp,
+                lineHeight = 24.sp,
+                letterSpacing = 0.15.sp
+            )
+        )
+        Divider(modifier = Modifier.padding(top = 10.dp))
     }
 }
