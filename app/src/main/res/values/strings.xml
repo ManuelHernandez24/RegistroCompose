@@ -2,4 +2,8 @@
     <string name="app_name">Registro Compose</string>
     <string name="personas">Personas</string>
     <string name="add_persona">Agregar persona</string>
+    <string name="nombres">Nombres</string>
+    <string name="email">Email</string>
+    <string name="ocupacion">Ocupación</string>
+    <string name="balance">Balance</string>
 </resources>
