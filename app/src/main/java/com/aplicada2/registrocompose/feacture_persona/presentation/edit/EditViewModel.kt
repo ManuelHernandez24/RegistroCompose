@@ -9,6 +9,8 @@ import com.aplicada2.registrocompose.feacture_persona.domain.model.Persona
 import com.aplicada2.registrocompose.feacture_persona.domain.use_cases.GetPersona
 import com.aplicada2.registrocompose.feacture_persona.domain.use_cases.InsertPersona
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -30,6 +32,9 @@ class EditViewModel @Inject constructor(
 
     private val _personaBalance = mutableStateOf(TextFieldState())
     val personaBalance: State<TextFieldState> = _personaBalance
+
+    private val _eventFlotw = MutableSharedFlow<UiEvent>()
+    val eventFlow = _eventFlotw.asSharedFlow()
 
     private var currentPersonaId: Int? = null
 
@@ -97,8 +102,13 @@ class EditViewModel @Inject constructor(
                             PersonaId = currentPersonaId
                         )
                     )
+                    _eventFlotw.emit(UiEvent.SavePersona)
                 }
             }
         }
     }
+    sealed class UiEvent{
+        object SavePersona: UiEvent()
+    }
+
 }

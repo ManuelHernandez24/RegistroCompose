@@ -3,6 +3,7 @@ package com.aplicada2.registrocompose.feacture_persona.presentation.edit.compone
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -13,6 +14,7 @@ import androidx.navigation.NavController
 import com.aplicada2.registrocompose.R
 import com.aplicada2.registrocompose.feacture_persona.presentation.edit.EditEvent
 import com.aplicada2.registrocompose.feacture_persona.presentation.edit.EditViewModel
+import kotlinx.coroutines.flow.collectLatest
 
 @Composable
 fun EditScreen(
@@ -23,6 +25,18 @@ fun EditScreen(
     val emailState = viewModel.personaEmail.value
     val ocupacionIdState = viewModel.personaOcupacionId.value
     val balanceState = viewModel.personaBalance.value
+
+    LaunchedEffect(key1 = true ){
+        viewModel.eventFlow.collectLatest { event ->
+            when(event){
+                is EditViewModel.UiEvent.SavePersona -> {
+                    navController.navigateUp()
+                }
+
+            }
+
+        }
+    }
 
     Scaffold(
         topBar = {
