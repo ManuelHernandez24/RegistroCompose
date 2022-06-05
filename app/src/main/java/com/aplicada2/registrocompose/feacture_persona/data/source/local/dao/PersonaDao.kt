@@ -4,6 +4,7 @@ import androidx.room.*
 import com.aplicada2.registrocompose.feacture_persona.domain.model.Persona
 import  kotlinx.coroutines.flow.Flow
 
+@Dao
 interface PersonaDao {
 
     @Query("Select * from Persona")

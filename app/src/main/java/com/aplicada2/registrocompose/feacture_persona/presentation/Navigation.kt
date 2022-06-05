@@ -1,9 +1,12 @@
 package com.aplicada2.registrocompose.feacture_persona.presentation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.aplicada2.registrocompose.feacture_persona.presentation.edit.components.EditScreen
 import com.aplicada2.registrocompose.feacture_persona.presentation.home.HomeScreen
 
 @Composable
@@ -17,6 +20,19 @@ fun Navigation(){
     ){
         composable(route = Screen.Home.route){
             HomeScreen(navController = navController)
+        }
+        composable(
+            route = Screen.Edit.route,
+            arguments = listOf(
+                navArgument(
+                    name = "personaId"
+                ){
+                    type = NavType.IntType
+                    defaultValue = -1
+                }
+            )
+        ){
+            EditScreen(navController = navController)
         }
     }
 }
